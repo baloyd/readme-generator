@@ -1,7 +1,11 @@
-// TODO: Include packages needed for this application
-const inquirer=require("./node_modules/inquirer");
-// TODO: Create an array of questions for user input
- inquirer.prompt([{
+//Packages needed for the application
+const inquirer=require("./node_modules/inquirer")
+const fs=require("fs");
+const generateMarkdown=require("./assets/utils/generateMarkdown")
+
+//An array of questions for user input to populate the README.md
+ questions=[
+    {
     type:"input",
     name:"userName",
     message:'What is your Github username?'
@@ -37,13 +41,15 @@ const inquirer=require("./node_modules/inquirer");
     type:"input",
     name:"repoContribute",
     message:'What does the user need to know about contributing to the repo?'
-    }]).then((result)=>{
-    console.log(result)
+    }
+   ];
+   inquirer.prompt(questions).then(data=>{
+    console.log(data)
     });
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
-inquirer.writeToFile("README.md",)
+
 
 // TODO: Create a function to initialize app
 function init() {}
