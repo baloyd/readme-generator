@@ -8,19 +8,35 @@ const generateMarkdown=require("./assets/utils/generateMarkdown")
     {
     type:"input",
     name:"userName",
-    message:'What is your Github username?'
+    message:'What is your Github username?',
+    validate: function (data) {
+       if (data.length < 1) {
+          return console.log("A valid Github username is required.")
+       }
+    }
  },{
     type:"input",
     name:"emailAddress",
     message:'What is your email address?'
+    
  },{
     type:"input",
     name:"projectName",
-    message:"What is your project's name?"
+    message:"What is your project's name?",
+    validate: function (data) {
+       if (data.length < 1) {
+          return console.log("A valid project title is required.")
+       }
+    }
  },{
-    type:"checkbox",
+    type:"input",
     name:"description",
-    message:'Please write a short description of your project'
+    message:'Please write a short description of your project',
+    validate: function (data) {
+       if (data.length < 1) {
+          return console.log("A valid project description is required.")
+       }
+    }
  },{
     type:"list",
     name:"license",
@@ -48,12 +64,20 @@ const generateMarkdown=require("./assets/utils/generateMarkdown")
     console.log(data)
     });
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// A function to write README file
+   fs.writeFile("README.md",data,error =>{
+      if (error){
+         return console.log(error);
+      }
+      console.log("README created successfully!")
+   })
 
 
-// TODO: Create a function to initialize app
-function init() {}
+
+// A function to initialize app
+function init() {
+   
+}
 
 // Function call to initialize app
 init();
