@@ -18,13 +18,14 @@ const generateMarkdown=require("./assets/utils/generateMarkdown")
     name:"projectName",
     message:"What is your project's name?"
  },{
-    type:"input",
+    type:"checkbox",
     name:"description",
     message:'Please write a short description of your project'
  },{
-    type:"input",
+    type:"list",
     name:"license",
-    message:'What kind of license should your project have?'
+    message:'What kind of license should your project have?',
+    choices: ["Apache","Mozilla","Unlicense","IBM"]
  },{
     type:"input",
     name:"dependencies",
