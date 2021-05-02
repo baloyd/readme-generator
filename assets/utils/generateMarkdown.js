@@ -30,7 +30,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   return`## License 
   This project is covered by the ${data.license} license.${renderLicenseBadge(license)}
-  
+  ${renderLicenseBadge(license)}
   ${renderLicenseLink(license)}`
 }
 

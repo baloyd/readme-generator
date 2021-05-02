@@ -3,40 +3,25 @@ const inquirer=require("./node_modules/inquirer")
 const fs=require("fs");
 const generateMarkdown=require("./assets/utils/generateMarkdown")
 
+
 //An array of questions for user input to populate the README.md
  questions=[
     {
     type:"input",
     name:"userName",
-    message:'What is your Github username?',
-    validate: function (data) {
-       if (data.length < 1) {
-          return console.log("A valid Github username is required.")
-       }
-    }
+    message:'What is your Github username?'
  },{
     type:"input",
     name:"emailAddress",
     message:'What is your email address?'
-    
  },{
     type:"input",
     name:"projectName",
-    message:"What is your project's name?",
-    validate: function (data) {
-       if (data.length < 1) {
-          return console.log("A valid project title is required.")
-       }
-    }
+    message:"What is your project's name?"
  },{
     type:"input",
     name:"description",
-    message:'Please write a short description of your project',
-    validate: function (data) {
-       if (data.length < 1) {
-          return console.log("A valid project description is required.")
-       }
-    }
+    message:'Please write a short description of your project'
  },{
     type:"list",
     name:"license",
@@ -61,20 +46,23 @@ const generateMarkdown=require("./assets/utils/generateMarkdown")
     }
    ];
    inquirer.prompt(questions).then(data=>{
+      const generateContent = generateMarkdown(data)
+      writeToFile();
     console.log(data)
     });
 
-// A function to write README file
-   fs.writeFile("README.md",data,error =>{
+// TODO: Create a function to write README file
+function writeToFile(fileName, data, error) {
+   fs.writeFile("README.md",generateContent,error =>{
       if (error){
          return console.log(error);
       }
       console.log("README created successfully!")
    })
+}
 
 
-
-// A function to initialize app
+// TODO: Create a function to initialize app
 function init() {
    
 }
