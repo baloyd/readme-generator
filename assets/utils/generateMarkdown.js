@@ -30,15 +30,15 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   return`## License 
   This project is covered by the ${data.license} license.${renderLicenseBadge(license)}
-  ${renderLicenseBadge(license)}
-  ${renderLicenseLink(license)}`
+  ${renderLicenseBadge(data.license)}
+  ${renderLicenseLink(data.license)}`
 }
 
 // A function to generate markdown for README
 function generateMarkdown(data) {
   return `#${data.projectName} 
   
-  ${renderLicenseBadge(license)}
+  ${renderLicenseBadge(data.license)}
 
 
   ## Description
@@ -60,9 +60,8 @@ function generateMarkdown(data) {
   ## Usage
   ${data.repoUse}
 
-  ${renderLicenseSection(license)}
+  ${renderLicenseSection(data.license)}
   
- 
 
   ## Contributing
   ${data.repoContribute}

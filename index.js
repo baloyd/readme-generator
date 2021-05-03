@@ -46,14 +46,15 @@ const generateMarkdown=require("./assets/utils/generateMarkdown")
     }
    ];
    inquirer.prompt(questions).then(data=>{
-      const generateContent = generateMarkdown(data)
+      console.log(data)
+      
       writeToFile();
-    console.log(data)
+    
     });
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data, error) {
-   fs.writeFile("README.md",generateContent,error =>{
+   fs.writeFile("README.md",generateMarkdown(data),error =>{
       if (error){
          return console.log(error);
       }
@@ -62,7 +63,7 @@ function writeToFile(fileName, data, error) {
 }
 
 
-// TODO: Create a function to initialize app
+// A function to initialize app
 function init() {
    
 }
