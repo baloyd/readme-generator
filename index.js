@@ -48,11 +48,12 @@ const generateMarkdown=require("./assets/utils/generateMarkdown")
    inquirer.prompt(questions).then(data=>{
       console.log(data)
       
-      writeToFile();
-    
+      writeToFile("README.md",data,error =>{
+         
+      })
     });
 
-// TODO: Create a function to write README file
+// A function to write README file
 function writeToFile(fileName, data, error) {
    fs.writeFile("README.md",generateMarkdown(data),error =>{
       if (error){
@@ -62,11 +63,3 @@ function writeToFile(fileName, data, error) {
    })
 }
 
-
-// A function to initialize app
-function init() {
-   
-}
-
-// Function call to initialize app
-init();
