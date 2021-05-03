@@ -1,43 +1,6 @@
 #readme-generator 
   
-  [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]
-
-
-  ## Description
-  generates readme files dynamically through user input.
-
-  ## Table of Contents
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
+  This project generates a readme file dynamically through user input using node.js and the npm package inquirer. The user initializes the file in the terminal and is taken through a list of prompts asking the user information about their project. After the user is finished, the readme file is generated automatically and saved to their system.
   
- 
-  ## Installation
-  npm install readme
-
-  ## Usage
-  node.js and javascript
-
-  ## License 
-  This project is covered by the Mozilla license.[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]
-  [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]
-  (https://opensource.org/licenses/MPL-2.0)
-  
-
-  ## Contributing
-  nothing
-
-  ## Tests
-  none
-
-  ## Questions
-
-  Find me on GitHub: [baloyd](https://github.com/baloyd)
- 
-  Contact: danielbaloy@gmail.com
-  
-
+  Link to demo video:
+ https://drive.google.com/file/d/11WyJwP4Rpe7eLuA5wU1z7IzDcHcO3zAb/view
